@@ -35,7 +35,9 @@ keluar dari folder android kembali ke folder project dan jalankan perintah
 ```console
 $ npm run android
 ```
+#Install Dependencies atau Library
 
+jika menginstall dependencies atau library beri info kegunaan dari library tersebut contoh [disini](dependencies.txt)
 
 
 
