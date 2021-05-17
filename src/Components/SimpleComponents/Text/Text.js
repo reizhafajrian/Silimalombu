@@ -73,10 +73,34 @@ const TextRegularSubTitlePrimaryDark = props => {
   );
 };
 
+const TextBoldDesriptionWhite = props => {
+  const {text} = props;
+  return (
+    <>
+      <TextBoldDescriptionComponent color={colors.White}>
+        {text}
+      </TextBoldDescriptionComponent>
+    </>
+  );
+};
+
+const TextLightDesriptionWhite = props => {
+  const {text} = props;
+  return (
+    <>
+      <TextLightDescriptionComponent color={colors.White}>
+        {text}
+      </TextLightDescriptionComponent>
+    </>
+  );
+};
+
 export {
   TextBoldTitle2PrimaryDark,
   TextBoldTitleBlack,
+  TextBoldDesriptionWhite,
   TextRegularDescriptionWhite,
   TextRegularDescriptionBlack,
   TextRegularSubTitlePrimaryDark,
+  TextLightDesriptionWhite,
 };

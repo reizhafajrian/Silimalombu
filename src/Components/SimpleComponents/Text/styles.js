@@ -25,7 +25,7 @@ const TextBoldSubTitleComponent = styled.Text`
 `;
 
 const TextBoldDescriptionComponent = styled.Text`
-  font-weight: normal;
+  font-weight: bold;
   font-size: 12px;
   color: ${props => props.color};
 `;

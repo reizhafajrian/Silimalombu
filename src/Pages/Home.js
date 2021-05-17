@@ -1,38 +1,41 @@
 import React from 'react';
-import {View, Text, SafeAreaView, Image} from 'react-native';
+import {View, Image, ScrollView} from 'react-native';
 import styled from 'styled-components';
 import {IMGBG} from '../Assets';
 import ButtonChoice from '../Components/SimpleComponents/ButtonChoice/ButtonChoice';
 import Logo from '../Components/SimpleComponents/Logo/Logo';
+import ListEventHome from '../Components/ListComponents/EventHome/ListEventHome';
 import {
   TextBoldTitle2PrimaryDark,
   TextBoldTitleBlack,
   TextRegularSubTitlePrimaryDark,
 } from '../Components/SimpleComponents/Text/Text';
-import {colors} from '../Utils/Colors/colors';
 export default function Home() {
   return (
-    <SafeContainer>
-      <Image
-        source={IMGBG}
-        style={{position: 'absolute', top: 103, right: 0}}
-      />
-      <Logo />
-      <View style={{height: 26}} />
-      <TextBoldTitle2PrimaryDark text={'Where do\n you want to go?'} />
-      <View style={{height: 36}} />
-      <TextBoldTitleBlack text={'Categories'} />
-      <View style={{height: 26}} />
-      <WrapperButton>
-        <ButtonChoice type={`Scan`} />
-        <ButtonChoice type={`Event`} />
-        <ButtonChoice type={`Alam`} />
-      </WrapperButton>
-      <TextEvent>
-        <TextBoldTitleBlack text={'New Event'} />
-        <TextRegularSubTitlePrimaryDark text={'See All'} />
-      </TextEvent>
-    </SafeContainer>
+    <ScrollView>
+      <SafeContainer>
+        <Image
+          source={IMGBG}
+          style={{position: 'absolute', top: 103, right: 0}}
+        />
+        <Logo />
+        <View style={{height: 26}} />
+        <TextBoldTitle2PrimaryDark text={'Where do\n you want to go?'} />
+        <View style={{height: 36}} />
+        <TextBoldTitleBlack text={'Categories'} />
+        <View style={{height: 26}} />
+        <WrapperButton>
+          <ButtonChoice type={`Scan`} />
+          <ButtonChoice type={`Event`} />
+          <ButtonChoice type={`Alam`} />
+        </WrapperButton>
+        <TextEvent>
+          <TextBoldTitleBlack text={'New Event'} />
+          <TextRegularSubTitlePrimaryDark text={'See All'} />
+        </TextEvent>
+        <ListEventHome />
+      </SafeContainer>
+    </ScrollView>
   );
 }
 

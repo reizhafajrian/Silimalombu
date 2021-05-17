@@ -47,7 +47,6 @@ export default function ButtonChoice({type, onPress}) {
       style={{
         width: (width * 25) / 100,
         height: (width * 25) / 100,
-        marginHorizontal: 8,
         borderRadius: 8,
       }}>
       <ContainerButton onPress={() => alert(type)}>
