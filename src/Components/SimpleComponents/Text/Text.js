@@ -95,12 +95,84 @@ const TextLightDesriptionWhite = props => {
   );
 };
 
+const TextBoldSubTitleBlack = props => {
+  const {text} = props;
+  return (
+    <>
+      <TextBoldSubTitleComponent color={colors.Black}>
+        {text}
+      </TextBoldSubTitleComponent>
+    </>
+  );
+};
+
+const TextLightDescriptionBlack = props => {
+  const {text} = props;
+  return (
+    <>
+      <TextLightDescriptionComponent color={colors.Black}>
+        {text}
+      </TextLightDescriptionComponent>
+    </>
+  );
+};
+
+const TextBoldTitleWhite = props => {
+  const {text} = props;
+  return (
+    <>
+      <TextBoldTitleComponent color={colors.White}>
+        {text}
+      </TextBoldTitleComponent>
+    </>
+  );
+};
+
+const TextRegularSubTitlePrimary = props => {
+  const {text} = props;
+  return (
+    <>
+      <TextRegularSubTitleComponent color={colors.Primary}>
+        {text}
+      </TextRegularSubTitleComponent>
+    </>
+  );
+};
+
+const TextRegularSubTitleTersierPrimary = props => {
+  const {text} = props;
+  return (
+    <>
+      <TextRegularSubTitleComponent color={colors.TersierPrimary}>
+        {text}
+      </TextRegularSubTitleComponent>
+    </>
+  );
+};
+
+const TextBoldTitlePrimary = props => {
+  const {text} = props;
+  return (
+    <>
+      <TextBoldTitleComponent color={colors.Primary}>
+        {text}
+      </TextBoldTitleComponent>
+    </>
+  );
+};
+
 export {
   TextBoldTitle2PrimaryDark,
   TextBoldTitleBlack,
+  TextBoldTitleWhite,
+  TextBoldTitlePrimary,
+  TextBoldSubTitleBlack,
   TextBoldDesriptionWhite,
+  TextRegularSubTitlePrimary,
+  TextRegularSubTitleTersierPrimary,
   TextRegularDescriptionWhite,
   TextRegularDescriptionBlack,
   TextRegularSubTitlePrimaryDark,
   TextLightDesriptionWhite,
+  TextLightDescriptionBlack,
 };

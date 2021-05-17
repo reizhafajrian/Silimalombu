@@ -12,7 +12,7 @@ import {
 } from '../Components/SimpleComponents/Text/Text';
 export default function Home() {
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <SafeContainer>
         <Image
           source={IMGBG}
