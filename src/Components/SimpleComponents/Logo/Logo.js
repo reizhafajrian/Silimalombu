@@ -1,13 +1,18 @@
-import React from 'react'
-import { View, Text,Image } from 'react-native'
-import styled from 'styled-components'
-import { IMGLogo } from '../../../Assets'
+import React from 'react';
+import {Image, StyleSheet} from 'react-native';
+import {IMGLogo} from '../../../Assets';
 
 export default function Logo() {
-    return (
-        <>
-           <Image source={IMGLogo}  />
-        </>
-    )
+  return (
+    <>
+      <Image style={styles.logo} source={IMGLogo} />
+    </>
+  );
 }
 
+const styles = StyleSheet.create({
+  logo: {
+    width: 64,
+    height: 69,
+  },
+});

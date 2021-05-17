@@ -1,30 +1,37 @@
 import React from 'react';
 import {View, Text, SafeAreaView, Image} from 'react-native';
 import styled from 'styled-components';
-import { IMGBG } from '../Assets';
+import {IMGBG} from '../Assets';
 import ButtonChoice from '../Components/SimpleComponents/ButtonChoice/ButtonChoice';
 import Logo from '../Components/SimpleComponents/Logo/Logo';
-import TextTitle from '../Components/SimpleComponents/TextTitile/TextTitle';
+import {
+  TextBoldTitle2PrimaryDark,
+  TextBoldTitleBlack,
+  TextRegularSubTitlePrimaryDark,
+} from '../Components/SimpleComponents/Text/Text';
 import {colors} from '../Utils/Colors/colors';
 export default function Home() {
-  console.log(colors);
   return (
     <SafeContainer>
-        <Image source={IMGBG} style={{position:"absolute",top:103,right:0}}/>
+      <Image
+        source={IMGBG}
+        style={{position: 'absolute', top: 103, right: 0}}
+      />
       <Logo />
-      <View style={{height:26}}/>
-
-      <TextTitle text={'Where do you want to go?'} />
-      <View style={{height:36}}/>
-      <TextStandard>
-      Categories
-      </TextStandard>
-      <View style={{height:26}}/>
+      <View style={{height: 26}} />
+      <TextBoldTitle2PrimaryDark text={'Where do\n you want to go?'} />
+      <View style={{height: 36}} />
+      <TextBoldTitleBlack text={'Categories'} />
+      <View style={{height: 26}} />
       <WrapperButton>
-        <ButtonChoice  type={`Scan`} />
-        <ButtonChoice  type={`Event`} />
-        <ButtonChoice  type={`Alam`} />
+        <ButtonChoice type={`Scan`} />
+        <ButtonChoice type={`Event`} />
+        <ButtonChoice type={`Alam`} />
       </WrapperButton>
+      <TextEvent>
+        <TextBoldTitleBlack text={'New Event'} />
+        <TextRegularSubTitlePrimaryDark text={'See All'} />
+      </TextEvent>
     </SafeContainer>
   );
 }
@@ -38,7 +45,10 @@ const WrapperButton = styled.View`
   flex-direction: row;
   justify-content: space-between;
 `;
-const TextStandard=styled.Text`
-font-size:18px;
-font-weight:600;
-`
+
+const TextEvent = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 35;
+  alignItems: center;
+`;

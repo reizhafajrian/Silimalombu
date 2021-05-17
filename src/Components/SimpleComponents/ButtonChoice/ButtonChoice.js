@@ -3,9 +3,13 @@ import {View, Text, TouchableOpacity, Dimensions} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styled from 'styled-components';
 import {ICAlam, ICEvent, ICScan} from '../../../Assets';
+import {
+  TextRegularDescriptionWhite,
+  TextRegularDescriptionBlack,
+} from '../Text/Text';
 
 const width = Dimensions.get('screen').width;
-export default function ButtonChoice({type,onPress}) {
+export default function ButtonChoice({type, onPress}) {
   const Icon = type => {
     switch (type) {
       case 'Scan':
@@ -16,7 +20,7 @@ export default function ButtonChoice({type,onPress}) {
         return <ICAlam />;
     }
   };
-  const colorGradient = (type) => {
+  const colorGradient = type => {
     let data = [];
     if (type === 'Scan') {
       data = ['#ED673C', '#DFB536'];
@@ -26,19 +30,34 @@ export default function ButtonChoice({type,onPress}) {
     return data;
   };
 
+  const textColor = type => {
+    switch (type) {
+      case 'Scan':
+        return <TextRegularDescriptionWhite text={type} />;
+      case 'Event':
+        return <TextRegularDescriptionBlack text={type} />;
+      case 'Alam':
+        return <TextRegularDescriptionBlack text={type} />;
+    }
+  };
+
   return (
     <LinearGradient
       colors={colorGradient(type)}
       style={{
-        width: (width * 20) / 100,
-        height: (width * 20) / 100,
+        width: (width * 25) / 100,
+        height: (width * 25) / 100,
         marginHorizontal: 8,
         borderRadius: 8,
       }}>
-      <ContainerButton onPress={()=>alert(type)} >{Icon(type)}</ContainerButton>
+      <ContainerButton onPress={() => alert(type)}>
+        {Icon(type)}
+        {textColor(type)}
+      </ContainerButton>
     </LinearGradient>
   );
 }
+
 const ContainerButton = styled.TouchableOpacity`
   height: 100%;
   justify-content: center;
