@@ -2,6 +2,7 @@ import React from 'react'
 import { createStackNavigator } from "@react-navigation/stack";
 import BottomNaviagtion from '../../BottomNavigation/BottomNavigation';
 import Home from '../../Pages/Home';
+import Scanner from '../../Components/ComplexComponents/Scanner/Scanner';
 
 export default function MainStack() {
     const Stack=createStackNavigator()
@@ -10,6 +11,13 @@ export default function MainStack() {
             <Stack.Screen
                 name="Home"
                 component={Home}
+                options={{
+                    headerShown:false
+                }}
+            />   
+             <Stack.Screen
+                name="Scanner"
+                component={Scanner}
                 options={{
                     headerShown:false
                 }}

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import {ICAlam, ICEvent, ICScan} from '../../../Assets';
 
 const width = Dimensions.get('screen').width;
-export default function ButtonChoice({type,onPress}) {
+export default function ButtonChoice({type, onPress}) {
   const Icon = type => {
     switch (type) {
       case 'Scan':
@@ -16,7 +16,7 @@ export default function ButtonChoice({type,onPress}) {
         return <ICAlam />;
     }
   };
-  const colorGradient = (type) => {
+  const colorGradient = type => {
     let data = [];
     if (type === 'Scan') {
       data = ['#ED673C', '#DFB536'];
@@ -26,16 +26,30 @@ export default function ButtonChoice({type,onPress}) {
     return data;
   };
 
+  const checkColor=(type)=>{
+      if(type==="Scan"){
+          return "#FFFFFF"
+      }
+      else{
+          return "black"
+      }
+  }
   return (
     <LinearGradient
       colors={colorGradient(type)}
       style={{
-        width: (width * 20) / 100,
-        height: (width * 20) / 100,
+        width: (width * 27) / 100,
+        height: (width * 27) / 100,
         marginHorizontal: 8,
         borderRadius: 8,
       }}>
-      <ContainerButton onPress={()=>alert(type)} >{Icon(type)}</ContainerButton>
+      <ContainerButton onPress={onPress}>
+   
+        {Icon(type)}
+        <TextAbsolute color={checkColor(type)}>{type}</TextAbsolute>
+  
+   
+      </ContainerButton>
     </LinearGradient>
   );
 }
@@ -46,3 +60,8 @@ const ContainerButton = styled.TouchableOpacity`
   border-radius: 8px;
   border: 2px solid #f4f4f4;
 `;
+const TextAbsolute=styled.Text`
+position:absolute;
+bottom:0px;
+color:${props=>props.color}
+`
