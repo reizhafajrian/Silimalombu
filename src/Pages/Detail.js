@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, ScrollView, Text} from 'react-native';
+import {Image, SafeAreaView, ScrollView, Text} from 'react-native';
 import styled from 'styled-components';
 import {IMGBGLogoDetail, ICBack} from '../Assets';
 import {
@@ -76,64 +76,62 @@ export default function Detail(id, status) {
   };
 
   return (
-    <ScrollView contentContainerStyle={{flexGrow: 1}}>
-      <ContainerDetail>
-        <Image
-          source={image('')}
-          style={{
-            top: 0,
-            width: '100%',
-            height: 360,
-            borderBottomLeftRadius: 16,
-            borderBottomRightRadius: 16,
-          }}
-        />
-        <ICBack
-          style={{marginTop: 12, marginLeft: 16, position: 'absolute'}}
-          onPress={() => this.props.navigation.goBack(null)}
-        />
-        <ContainerDescription>
-          <TextBoldTitle2PrimaryDark text={'Manggo Festival'} />
-          {/* Hard code "Event" chage to variable status*/}
-          {renderDefaultHeader('Event')}
-          <TextBoldSubTitleBlack text={titleAbout('Event')} />
-          <WrapperDescription>
-            <Text style={{textAlign: 'justify'}}>
-              <TextLightDescriptionBlack
-                text={
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus'
-                }
-              />
-            </Text>
-          </WrapperDescription>
-          {renderButton('Event')}
-          {status === 'Tree' || status === 'Species' ? (
-            <WrapperSubTitleNatural>
-              <TextBoldSubTitleBlack
-                text={
-                  status === 'Tree'
-                    ? 'Usability the Tree'
-                    : 'Usability the Species'
-                }
-              />
-            </WrapperSubTitleNatural>
-          ) : null}
-          {status === 'Tree' || status === 'spices' ? (
-            <ListUsabilityNatural type={'Input Data here'} />
-          ) : null}
-          {status === 'spices' ? (
-            <WrapperSubTitleNatural>
-              <TextBoldSubTitleBlack
-                text={`Nutrient Content the Spices every ${weight} g`}
-              />
-            </WrapperSubTitleNatural>
-          ) : null}
-          {status === 'spices' ? (
-            <ListNutrionSpices type={'Input Data here'} />
-          ) : null}
-        </ContainerDescription>
-      </ContainerDetail>
-    </ScrollView>
+    <SafeAreaView>
+      <ScrollView>
+        <ContainerDetail>
+          <Image
+            source={image('')}
+            style={{
+              top: 0,
+              width: '100%',
+              height: 360,
+              borderBottomLeftRadius: 16,
+              borderBottomRightRadius: 16,
+            }}
+          />
+          <ContainerDescription>
+            <TextBoldTitle2PrimaryDark text={'Manggo Festival'} />
+            {/* Hard code "Event" chage to variable status*/}
+            {renderDefaultHeader('Event')}
+            <TextBoldSubTitleBlack text={titleAbout('Event')} />
+            <WrapperDescription>
+              <Text style={{textAlign: 'justify'}}>
+                <TextLightDescriptionBlack
+                  text={
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacus, viverra vitae congue eu, consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus'
+                  }
+                />
+              </Text>
+            </WrapperDescription>
+            {renderButton('Event')}
+            {status === 'Tree' || status === 'Species' ? (
+              <WrapperSubTitleNatural>
+                <TextBoldSubTitleBlack
+                  text={
+                    status === 'Tree'
+                      ? 'Usability the Tree'
+                      : 'Usability the Species'
+                  }
+                />
+              </WrapperSubTitleNatural>
+            ) : null}
+            {status === 'Tree' || status === 'spices' ? (
+              <ListUsabilityNatural type={'Input Data here'} />
+            ) : null}
+            {status === 'spices' ? (
+              <WrapperSubTitleNatural>
+                <TextBoldSubTitleBlack
+                  text={`Nutrient Content the Spices every ${weight} g`}
+                />
+              </WrapperSubTitleNatural>
+            ) : null}
+            {status === 'spices' ? (
+              <ListNutrionSpices type={'Input Data here'} />
+            ) : null}
+          </ContainerDescription>
+        </ContainerDetail>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
@@ -143,21 +141,21 @@ const ContainerDetail = styled.SafeAreaView`
 `;
 
 const ContainerDescription = styled.View`
-  paddingHorizontal: 16px;
-  marginBottom: 32px;
-  marginTop: 24px;
+  padding-horizontal: 16px;
+  margin-bottom: 32px;
+  margin-top: 24px;
 `;
 
 const WrapperInfo = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  marginTop: 40px;
+  margin-top: 40px;
 `;
 
 const WrapperDescription = styled.View`
-  marginTop: 12px;
+  margin-top: 12px;
 `;
 
 const WrapperSubTitleNatural = styled.View`
-  marginTop: 24px;
+  margin-top: 24px;
 `;
