@@ -3,6 +3,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import BottomNaviagtion from '../../BottomNavigation/BottomNavigation';
 import Home from '../../Pages/Home';
 import Scanner from '../../Components/ComplexComponents/Scanner/Scanner';
+import Detail from '../../Pages/Detail';
+import Event from '../../Pages/Event';
 
 export default function MainStack() {
   const Stack = createStackNavigator();
@@ -18,6 +20,20 @@ export default function MainStack() {
       <Stack.Screen
         name="Scanner"
         component={Scanner}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Detail"
+        component={Detail}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Event"
+        component={Event}
         options={{
           headerShown: false,
         }}

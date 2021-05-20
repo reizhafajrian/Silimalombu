@@ -30,8 +30,14 @@ export default function Home({navigation}) {
             }}
             type={`Scan`}
           />
-          <ButtonChoice type={`Event`} />
-          <ButtonChoice type={`Alam`} />
+          <ButtonChoice
+            type={`Event`}
+            onPress={() => navigation.navigate('Event')}
+          />
+          <ButtonChoice
+            type={`Alam`}
+            onPress={() => navigation.navigate('Detail')}
+          />
         </WrapperButton>
         <FlatList
           data={[0, 1, 3, 4]}
