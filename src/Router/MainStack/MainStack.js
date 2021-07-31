@@ -28,14 +28,18 @@ export default function MainStack() {
         name="Detail"
         component={Detail}
         options={{
-          headerShown: false,
+          headerShown: true,
+          title: 'Detail',
+          headerBackTitle: '',
         }}
       />
       <Stack.Screen
         name="Event"
         component={Event}
         options={{
-          headerShown: false,
+          headerShown: true,
+          title: 'Event',
+          headerBackTitle: '',
         }}
       />
     </Stack.Navigator>

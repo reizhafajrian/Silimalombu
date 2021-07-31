@@ -7,9 +7,6 @@ export default function PlaceOfTravel() {
   return (
     <View style={{flex: 1, padding: 30}}>
       <TextInputComponent />
-      <CardEvent />
-      <CardEvent />
-      <CardEvent />
     </View>
   );
 }

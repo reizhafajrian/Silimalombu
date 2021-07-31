@@ -51,7 +51,7 @@ function renderButton(status) {
 
 //dummy weight Spices
 const weight = 100;
-export default function Detail(id, status) {
+export default function Detail({id, status}) {
   const image = imgSource => {
     let imageValue;
     if (imgSource === undefined || imgSource === '') {
@@ -92,7 +92,7 @@ export default function Detail(id, status) {
           <ContainerDescription>
             <TextBoldTitle2PrimaryDark text={'Manggo Festival'} />
             {/* Hard code "Event" chage to variable status*/}
-            {renderDefaultHeader('Event')}
+            {renderDefaultHeader(status)}
             <TextBoldSubTitleBlack text={titleAbout('Event')} />
             <WrapperDescription>
               <Text style={{textAlign: 'justify'}}>
@@ -103,7 +103,7 @@ export default function Detail(id, status) {
                 />
               </Text>
             </WrapperDescription>
-            {renderButton('Event')}
+            {renderButton(status)}
             {status === 'Tree' || status === 'Species' ? (
               <WrapperSubTitleNatural>
                 <TextBoldSubTitleBlack
@@ -117,16 +117,6 @@ export default function Detail(id, status) {
             ) : null}
             {status === 'Tree' || status === 'spices' ? (
               <ListUsabilityNatural type={'Input Data here'} />
-            ) : null}
-            {status === 'spices' ? (
-              <WrapperSubTitleNatural>
-                <TextBoldSubTitleBlack
-                  text={`Nutrient Content the Spices every ${weight} g`}
-                />
-              </WrapperSubTitleNatural>
-            ) : null}
-            {status === 'spices' ? (
-              <ListNutrionSpices type={'Input Data here'} />
             ) : null}
           </ContainerDescription>
         </ContainerDetail>

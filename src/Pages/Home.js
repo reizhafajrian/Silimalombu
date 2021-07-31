@@ -47,6 +47,8 @@ export default function Home({navigation}) {
           columnWrapperStyle={{
             justifyContent: 'space-around',
           }}
+          keyExtractor={(item, index) => item + index}
+          key={index => index}
         />
       </View>
     </SafeContainer>

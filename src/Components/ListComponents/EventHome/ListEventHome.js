@@ -6,7 +6,7 @@ import dummyEvent from './dummyEvent';
 export default function () {
   return (
     <FlatList
-    columnWrapperStyle={{  flex: 1,justifyContent: 'space-between'}}
+      columnWrapperStyle={{flex: 1, justifyContent: 'space-between'}}
       data={dummyEvent}
       renderItem={({item}) => (
         <ItemEvent
